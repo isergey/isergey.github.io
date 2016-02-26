@@ -1,0 +1,47 @@
+[
+  {
+    "title": "Цена",
+    "name": "price",
+    "input": "range",
+    "type": "number",
+    "open": true,
+    "openable": true,
+    "inputParams": {
+      "value": [10, 300],
+      "fromLabel": "От",
+      "toLabel": "До"
+    }
+  },
+  {
+    "title": "Доставка на дом",
+    "name": "delivery",
+    "input": "choice",
+    "type": "string",
+    "open": false,
+    "openable": true,
+    "inputParams": {
+      "value": [""],
+      "choices": [
+        ["yes", "Да"],
+        ["no", "Нет"],
+        ["", "Не важно"]
+      ]
+    }
+  },
+  {
+    "title": "Свойства",
+    "name": "params",
+    "input": "choice",
+    "type": "string",
+    "open": false,
+    "openable": true,
+    "inputParams": {
+      "multiple": true,
+      "choices": [
+        ["kids", "Детский"],
+        ["lowfat", "Диетический"],
+        ["nogmo", "Без ГМО"]
+      ]
+    }
+  }
+]
