@@ -1,0 +1,403 @@
+<!DOCTYPE html>
+<html class="ua_js_no">
+<head>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <meta charset="utf-8"/>
+    <title>2psa base</title>
+    <script>(function (e, c) {
+        e[c] = e[c].replace(/(ua_js_)no/g, "$1yes");
+    })(document.documentElement, "className");</script>
+    <meta/>
+    <link rel="stylesheet" href="_base.css"/>
+    <link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/fotorama/4.6.2/fotorama.css"/>
+    <!--[if IE]>
+    <link rel="stylesheet" href="_base.ie.css"/><![endif]-->
+    <link rel="shortcut icon" href="/fav2psa.ico"/>
+</head>
+<body class="page">
+<div class="map-region">
+    <div class="map i-bem" data-bem="{&quot;map&quot;:{}}"></div>
+</div>
+<div class="content"><a class="button-circle-blue" href="#">Искать</a>
+
+    <div class="gurufilter"><a class="gurufilter__select-city" href="#">Санкт-Петербург</a>
+
+        <div class="gurufilter__filter">
+            <div class="gurufilter__filter-outer"><i class="gurufilter__filter-i"></i><span
+                    class="gurufilter__filter-name">Скрытый фильтр</span></div>
+        </div>
+        <div class="gurufilter__filter">
+            <div class="gurufilter__filter-outer"><span class="gurufilter__filter-name">Услуга</span></div>
+            <ul class="gurufilter__filter-content">
+                <li class="gurufilter__enumlabel"><label class="gurufilter__label-radio"><input
+                        class="gurufilter__check" type="radio" name="browser"/><span class="circle"></span><span
+                        class="check"></span><span class="gurufilter__lable-name">Аренда</span></label></li>
+                <li class="gurufilter__enumlabel"><label class="gurufilter__label-radio"><input
+                        class="gurufilter__check" type="radio" name="browser"/><span class="circle"></span><span
+                        class="check"></span><span class="gurufilter__lable-name">Продажа</span></label></li>
+            </ul>
+        </div>
+        <div class="gurufilter__filter">
+            <div class="gurufilter__filter-outer"><i class="gurufilter__filter-i"></i><span
+                    class="gurufilter__filter-name">Биде</span></div>
+            <ul class="gurufilter__filter-content">
+                <li class="gurufilter__enumlabel"><label class="gurufilter__label-checkbox"><input
+                        class="gurufilter__check" type="checkbox" name="browser"/><span class="ripple"></span><span
+                        class="check"></span><span class="gurufilter__lable-name">Хорошо</span></label></li>
+                <li class="gurufilter__enumlabel"><label class="gurufilter__label-checkbox"><input
+                        class="gurufilter__check" type="checkbox" name="browser"/><span class="ripple"></span><span
+                        class="check"></span><span class="gurufilter__lable-name">Не очень</span></label></li>
+            </ul>
+        </div>
+        <div class="gurufilter__filter">
+            <div class="gurufilter__filter-outer"><i class="gurufilter__filter-i"></i><span
+                    class="gurufilter__filter-name">Цена</span></div>
+            <div class="gurufilter__filter-inputs"><input class="gurufilter__filter-inp" type="text" name="price"
+                                                          placeholder="От"/><input class="gurufilter__filter-inp"
+                                                                                   type="text" name="price"
+                                                                                   placeholder="До"/><span
+                    class="gurufilter__price-inp">РУБ</span><input class="gurufilter__filter-inp" type="range"/></div>
+        </div>
+        <div class="gurufilter__filter">
+            <div class="gurufilter__filter-outer"><i class="gurufilter__filter-i"></i><span
+                    class="gurufilter__filter-name">Расстояние до метро</span></div>
+            <div class="gurufilter__filter-inputs"><input class="gurufilter__filter-inp" type="text" name="price"
+                                                          placeholder="Неважно"/><span class="gurufilter__price-inp">Метры</span><input
+                    class="gurufilter__filter-inp" type="range" name="price"/></div>
+        </div>
+        <div class="gurufilter__panel-filters">
+            <div class="gurufilter__panel-filters-outer"><i class="gurufilter__panel-filters-i"></i><span
+                    class="gurufilter__panel-filters-name">Расширенные характеристики</span></div>
+        </div>
+        <div class="gurufilter__panel-filters">
+            <div class="gurufilter__panel-filters-outer"><i class="gurufilter__panel-filters-i"></i><span
+                    class="gurufilter__panel-filters-name">Дополнительные характеристики</span></div>
+            <div class="gurufilter__panel-filters-content">
+                <div class="gurufilter__filter">
+                    <div class="gurufilter__filter-outer"><i class="gurufilter__filter-i"></i><span
+                            class="gurufilter__filter-name">Биде</span></div>
+                    <ul class="gurufilter__filter-content">
+                        <li class="gurufilter__enumlabel"><label class="gurufilter__label-checkbox"><input
+                                class="gurufilter__check" type="checkbox" name="browser"/><span
+                                class="ripple"></span><span class="check"></span><span class="gurufilter__lable-name">Хорошо</span></label>
+                        </li>
+                        <li class="gurufilter__enumlabel"><label class="gurufilter__label-checkbox"><input
+                                class="gurufilter__check" type="checkbox" name="browser"/><span
+                                class="ripple"></span><span class="check"></span><span class="gurufilter__lable-name">Не очень</span></label>
+                        </li>
+                    </ul>
+                </div>
+                <div class="gurufilter__filter">
+                    <div class="gurufilter__filter-outer"><i class="gurufilter__filter-i"></i><span
+                            class="gurufilter__filter-name">Метро</span><span class="gurufilter__button-add">+</span>
+
+                        <div class="gurufilter__help-text">Нажмите на кнопку "+" чтобы добавить</div>
+                    </div>
+                </div>
+                <div class="gurufilter__filter">
+                    <div class="gurufilter__filter-outer"><i class="gurufilter__filter-i"></i><span
+                            class="gurufilter__filter-name">Район</span><span class="gurufilter__button-add">+</span>
+
+                        <div class="gurufilter__help-text">Нажмите на "&#215;" чтобы убрать</div>
+                    </div>
+                    <ul class="gurufilter__filter-content">
+                        <li class="gurufilter__enumlabel"><label class="gurufilter__label-remove-elements"><a
+                                class="gurufilter__remove" title="Убрать из фильтра">&#215;</a><span
+                                class="gurufilter__lable-name">Западно казахстанская область</span></label></li>
+                        <li class="gurufilter__enumlabel"><label class="gurufilter__label-remove-elements"><a
+                                class="gurufilter__remove" title="Убрать из фильтра">&#215;</a><span
+                                class="gurufilter__lable-name">Калиниский</span></label></li>
+                        <li class="gurufilter__enumlabel"><label class="gurufilter__label-remove-elements"><a
+                                class="gurufilter__remove" title="Убрать из фильтра">&#215;</a><span
+                                class="gurufilter__lable-name">Московский</span></label></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="logo"><a class="logo__img" href="#">2ПСА.рф</a><a class="logo__link" href="#">о нас</a>
+        <a class="logo__link" href="#">оставить заявку на поиск</a>
+        <hr/>
+    </div>
+    <div class="result">
+        <div class="result__item">
+            <div class="result__image-item"><img
+                    src="http://szvdom.ru/wp-content/uploads/jelitnye_kvartiry_spb_3-1024x682.jpg"/>
+                    <div class="result__image-item-description">
+                        12 фото<br>1 видео
+                    </div>
+            </div>
+            <div class="result__item-info">
+                <!--<a class="result__item-header" href="#">3 комн.: 101.10/77.30/8.80м², этаж-->
+                <!--5/5</a>-->
+                <div class="result__item-description">1 км. квартира<br>25 кв.м.<br>метро Технологический институт
+                </div>
+            </div>
+            <div class="result__price-item">
+                <div class="result__price-value">29 000  <span class="result__price-currency">&nbsp;руб./мес.</span>
+                    <div class="result__rice-value-description">комиссия 80%<br>объект свободен
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="result__item">
+            <div class="result__image-item"><img
+                    src="http://szvdom.ru/wp-content/uploads/jelitnye_kvartiry_spb_3-1024x682.jpg"/>
+                <div class="result__image-item-description">
+                    12 фото<br>1 видео
+                </div>
+            </div>
+            <div class="result__item-info">
+                <!--<a class="result__item-header" href="#">3 комн.: 101.10/77.30/8.80м², этаж-->
+                <!--5/5</a>-->
+                <div class="result__item-description">1 км. квартира<br>25 кв.м.<br>метро Технологический институт
+                </div>
+            </div>
+            <div class="result__price-item">
+                <div class="result__price-value">29 000  <span class="result__price-currency">&nbsp;руб./мес.</span>
+                    <div class="result__rice-value-description">комиссия 80%<br>объект свободен
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="result__item">
+            <div class="result__image-item"><img
+                    src="http://szvdom.ru/wp-content/uploads/jelitnye_kvartiry_spb_3-1024x682.jpg"/>
+                <div class="result__image-item-description">
+                    12 фото<br>1 видео
+                </div>
+            </div>
+            <div class="result__item-info">
+                <!--<a class="result__item-header" href="#">3 комн.: 101.10/77.30/8.80м², этаж-->
+                <!--5/5</a>-->
+                <div class="result__item-description">1 км. квартира<br>25 кв.м.<br>метро Технологический институт
+                </div>
+            </div>
+            <div class="result__price-item">
+                <div class="result__price-value">29 000  <span class="result__price-currency">&nbsp;руб./мес.</span>
+                    <div class="result__rice-value-description">комиссия 80%<br>объект свободен
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="result__item">
+            <div class="result__image-item"><img
+                    src="http://szvdom.ru/wp-content/uploads/jelitnye_kvartiry_spb_3-1024x682.jpg"/>
+                <div class="result__image-item-description">
+                    12 фото<br>1 видео
+                </div>
+            </div>
+            <div class="result__item-info">
+                <!--<a class="result__item-header" href="#">3 комн.: 101.10/77.30/8.80м², этаж-->
+                <!--5/5</a>-->
+                <div class="result__item-description">1 км. квартира<br>25 кв.м.<br>метро Технологический институт
+                </div>
+            </div>
+            <div class="result__price-item">
+                <div class="result__price-value">29 000  <span class="result__price-currency">&nbsp;руб./мес.</span>
+                    <div class="result__rice-value-description">комиссия 80%<br>объект свободен
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="result__item">
+            <div class="result__image-item"><img
+                    src="http://szvdom.ru/wp-content/uploads/jelitnye_kvartiry_spb_3-1024x682.jpg"/>
+                <div class="result__image-item-description">
+                    12 фото<br>1 видео
+                </div>
+            </div>
+            <div class="result__item-info">
+                <!--<a class="result__item-header" href="#">3 комн.: 101.10/77.30/8.80м², этаж-->
+                <!--5/5</a>-->
+                <div class="result__item-description">1 км. квартира<br>25 кв.м.<br>метро Технологический институт
+                </div>
+            </div>
+            <div class="result__price-item">
+                <div class="result__price-value">29 000  <span class="result__price-currency">&nbsp;руб./мес.</span>
+                    <div class="result__rice-value-description">комиссия 80%<br>объект свободен
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="result__item">
+            <div class="result__image-item"><img
+                    src="http://szvdom.ru/wp-content/uploads/jelitnye_kvartiry_spb_3-1024x682.jpg"/>
+                <div class="result__image-item-description">
+                    12 фото<br>1 видео
+                </div>
+            </div>
+            <div class="result__item-info">
+                <!--<a class="result__item-header" href="#">3 комн.: 101.10/77.30/8.80м², этаж-->
+                <!--5/5</a>-->
+                <div class="result__item-description">1 км. квартира<br>25 кв.м.<br>метро Технологический институт
+                </div>
+            </div>
+            <div class="result__price-item">
+                <div class="result__price-value">29 000  <span class="result__price-currency">&nbsp;руб./мес.</span>
+                    <div class="result__rice-value-description">комиссия 80%<br>объект свободен
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="result__item">
+            <div class="result__image-item"><img
+                    src="http://szvdom.ru/wp-content/uploads/jelitnye_kvartiry_spb_3-1024x682.jpg"/>
+                <div class="result__image-item-description">
+                    12 фото<br>1 видео
+                </div>
+            </div>
+            <div class="result__item-info">
+                <!--<a class="result__item-header" href="#">3 комн.: 101.10/77.30/8.80м², этаж-->
+                <!--5/5</a>-->
+                <div class="result__item-description">1 км. квартира<br>25 кв.м.<br>метро Технологический институт
+                </div>
+            </div>
+            <div class="result__price-item">
+                <div class="result__price-value">29 000  <span class="result__price-currency">&nbsp;руб./мес.</span>
+                    <div class="result__rice-value-description">комиссия 80%<br>объект свободен
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="result__item">
+            <div class="result__image-item"><img
+                    src="http://szvdom.ru/wp-content/uploads/jelitnye_kvartiry_spb_3-1024x682.jpg"/>
+                <div class="result__image-item-description">
+                    12 фото<br>1 видео
+                </div>
+            </div>
+            <div class="result__item-info">
+                <!--<a class="result__item-header" href="#">3 комн.: 101.10/77.30/8.80м², этаж-->
+                <!--5/5</a>-->
+                <div class="result__item-description">1 км. квартира<br>25 кв.м.<br>метро Технологический институт
+                </div>
+            </div>
+            <div class="result__price-item">
+                <div class="result__price-value">29 000  <span class="result__price-currency">&nbsp;руб./мес.</span>
+                    <div class="result__rice-value-description">комиссия 80%<br>объект свободен
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="result__item">
+            <div class="result__image-item"><img
+                    src="http://szvdom.ru/wp-content/uploads/jelitnye_kvartiry_spb_3-1024x682.jpg"/>
+                <div class="result__image-item-description">
+                    12 фото<br>1 видео
+                </div>
+            </div>
+            <div class="result__item-info">
+                <!--<a class="result__item-header" href="#">3 комн.: 101.10/77.30/8.80м², этаж-->
+                <!--5/5</a>-->
+                <div class="result__item-description">1 км. квартира<br>25 кв.м.<br>метро Технологический институт
+                </div>
+            </div>
+            <div class="result__price-item">
+                <div class="result__price-value">29 000  <span class="result__price-currency">&nbsp;руб./мес.</span>
+                    <div class="result__rice-value-description">комиссия 80%<br>объект свободен
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="result__item">
+            <div class="result__image-item"><img
+                    src="http://szvdom.ru/wp-content/uploads/jelitnye_kvartiry_spb_3-1024x682.jpg"/>
+                <div class="result__image-item-description">
+                    12 фото<br>1 видео
+                </div>
+            </div>
+            <div class="result__item-info">
+                <!--<a class="result__item-header" href="#">3 комн.: 101.10/77.30/8.80м², этаж-->
+                <!--5/5</a>-->
+                <div class="result__item-description">1 км. квартира<br>25 кв.м.<br>метро Технологический институт
+                </div>
+            </div>
+            <div class="result__price-item">
+                <div class="result__price-value">29 000  <span class="result__price-currency">&nbsp;руб./мес.</span>
+                    <div class="result__rice-value-description">комиссия 80%<br>объект свободен
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="result__item">
+            <div class="result__image-item"><img
+                    src="http://szvdom.ru/wp-content/uploads/jelitnye_kvartiry_spb_3-1024x682.jpg"/>
+                <div class="result__image-item-description">
+                    12 фото<br>1 видео
+                </div>
+            </div>
+            <div class="result__item-info">
+                <!--<a class="result__item-header" href="#">3 комн.: 101.10/77.30/8.80м², этаж-->
+                <!--5/5</a>-->
+                <div class="result__item-description">1 км. квартира<br>25 кв.м.<br>метро Технологический институт
+                </div>
+            </div>
+            <div class="result__price-item">
+                <div class="result__price-value">29 000  <span class="result__price-currency">&nbsp;руб./мес.</span>
+                    <div class="result__rice-value-description">комиссия 80%<br>объект свободен
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+    <!--<a class="button-circle-green" href="#">Оставить заявку</a>-->
+
+    <!--<div class="detail"><a class="button-close" href="#">&#215;</a>-->
+
+        <!--<div class="detail__item-header-boxer">-->
+            <!--<div class="detail__item-header-box-row">-->
+                <!--<div class="detail__item-header-box">Код:</div>-->
+                <!--<div class="detail__item-header-box"><span class="detail__code-green">231123213</span></div>-->
+            <!--</div>-->
+            <!--<div class="detail__item-header-box-row">-->
+                <!--<div class="detail__item-header-box">Цена:</div>-->
+                <!--<div class="detail__item-header-box"><span class="detail__price">999 000 000 руб</span></div>-->
+            <!--</div>-->
+        <!--</div>-->
+        <!--<div class="detail__content">-->
+            <!--<div class="detail__content-boxer">-->
+                <!--<div class="detail__content-box-row">-->
+                    <!--<div class="detail__content-box">Тип объекта:</div>-->
+                    <!--<div class="detail__content-box"><span class="detail__content-description">Квартира</span></div>-->
+                <!--</div>-->
+                <!--<div class="detail__content-box-row">-->
+                    <!--<div class="detail__content-box">Адрес:</div>-->
+                    <!--<div class="detail__content-box"><span class="detail__content-description">Санкт-Петербург адм.ц., Московский Звездная ул., 9к1</span>-->
+                    <!--</div>-->
+                <!--</div>-->
+                <!--<div class="detail__content-box-row">-->
+                    <!--<div class="detail__content-box">Метро:</div>-->
+                    <!--<div class="detail__content-box"><span class="detail__content-description">Звездная (пеш 5м)</span>-->
+                    <!--</div>-->
+                <!--</div>-->
+                <!--<div class="detail__content-box-row">-->
+                    <!--<div class="detail__content-box">Кол-во комнат:</div>-->
+                    <!--<div class="detail__content-box"><span class="detail__content-description">4</span></div>-->
+                <!--</div>-->
+                <!--<div class="detail__content-box-row">-->
+                    <!--<div class="detail__content-box">Тип дома:</div>-->
+                    <!--<div class="detail__content-box"><span class="detail__content-description">504 серия</span></div>-->
+                <!--</div>-->
+            <!--</div>-->
+            <!--<div class="fotorama" data-nav="thumbs" data-allowfullscreen="true"><img-->
+                    <!--src="http://www.avtoturistu.ru/uploads/images/9/5/3/b/1375/abe94abce7.jpg"/><img-->
+                    <!--src="http://www.avtoturistu.ru/uploads/images/9/5/3/b/1375/abe94abce7.jpg"/><img-->
+                    <!--src="http://www.avtoturistu.ru/uploads/images/9/5/3/b/1375/abe94abce7.jpg"/><img-->
+                    <!--src="http://www.avtoturistu.ru/uploads/images/9/5/3/b/1375/abe94abce7.jpg"/><img-->
+                    <!--src="http://www.avtoturistu.ru/uploads/images/9/5/3/b/1375/abe94abce7.jpg"/><img-->
+                    <!--src="http://www.avtoturistu.ru/uploads/images/9/5/3/b/1375/abe94abce7.jpg"/><img-->
+                    <!--src="http://www.avtoturistu.ru/uploads/images/9/5/3/b/1375/abe94abce7.jpg"/><img-->
+                    <!--src="http://www.avtoturistu.ru/uploads/images/9/5/3/b/1375/abe94abce7.jpg"/><img-->
+                    <!--src="http://www.avtoturistu.ru/uploads/images/9/5/3/b/1375/abe94abce7.jpg"/><img-->
+                    <!--src="http://www.avtoturistu.ru/uploads/images/9/5/3/b/1375/abe94abce7.jpg"/></div>-->
+        <!--</div>-->
+    <!--</div>-->
+</div>
+<script src="http://api-maps.yandex.ru/2.1/?lang=ru_RU"></script>
+<script src="http://code.jquery.com/jquery-2.1.0.min.js"></script>
+<script src="http://cdnjs.cloudflare.com/ajax/libs/fotorama/4.6.2/fotorama.js"></script>
+<script src="_base.js"></script>
+</body>
+</html>
