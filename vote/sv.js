@@ -3,9 +3,20 @@
     var candidatesByOik = {};
     var oikByUik = {};
     var votePlaces = {};
-    $.get('/vote/candidate-oik.csv').then(function (data) {
+    function sortCandidates(row1, row2) {
+        if (row1[3] !== 'Объединенные Демократы' && row2[3] === 'Объединенные Демократы') {
+            return 1;
+        }
+
+        if (row1[3] === 'Объединенные Демократы' && row2[3] !== 'Объединенные Демократы') {
+            return -1;
+        }
+        
+        return 0;
+    }
+    $.get('http://isergey.github.io/vote/candidate-oik.csv').then(function (data) {
         var res = Papa.parse(data);
-        res.data.forEach(function (row) {
+        res.data.sort(sortCandidates).forEach(function (row) {
             var candidates = candidatesByOik[row[2]];
             if (candidates === undefined) {
                 candidates = [];
@@ -18,7 +29,7 @@
                 party: row[3],
             });
         });
-        return $.get('/vote/oik-uik.csv');
+        return $.get('http://isergey.github.io/vote/oik-uik.csv');
     }).then(function (data) {
         var res = Papa.parse(data);
         // console.log('data', res.data.map(i => i).forEeach);
@@ -32,7 +43,7 @@
                 }
             });
         });
-        return $.get('/vote/vote-places.csv');
+        return $.get('http://isergey.github.io/vote/vote-places.csv');
     }).then(function (data) {
         var res = Papa.parse(data);
         res.data.forEach(function (row) {
@@ -106,9 +117,26 @@
         // var uik = oikByUik[$houseSelect.select2('data')[0].uik];
         console.log('uik', uik);
         var oikData = oikByUik[uik];
+        if (oikData === undefined) {
+            drawError('Кандидаты для УИК ' + uik + ' не найдены');
+            return;
+        } else {
+            clearError();
+        }
         drawCandidates(candidatesByOik[oikData.oik]);
         drawVotePlace(votePlaces[uik]);
     });
+
+    var $errorContainer = $('#sv-error');
+    function drawError(message) {
+        $errorContainer.html('<div class="alert alert-danger">' + message  + '</div>');
+        $candidatesContainer.html('');
+        $votePlaceContainer.html('');
+    }
+
+    function clearError() {
+        $errorContainer.html('');
+    }
 
     var $candidatesContainer = $('#sv-candidates');
 

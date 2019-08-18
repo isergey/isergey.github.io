@@ -20,8 +20,8 @@
                 <h1>Умное голосование</h1>
                 <p>Укажите Ваш адрес и мы предложим Вам наших кандидатов.</p>
                 <div class="sv-app">
-                    <p>
-                        <select id="sv-app-district-select" style="width: 300px">
+                    <div class="form-group">
+                        <select id="sv-app-district-select">
                             <!-- <option value="">---------</option> -->
 
                             <!-- <option value="340f179a-bb2f-465d-b821-46a38d489e6a"></option> -->
@@ -63,13 +63,14 @@
                             <option value="c3ce24de-d1f8-493e-82ed-27cf1e1ded84">ЦЕНТРАЛЬНЫЙ РАЙОН</option>
 
                         </select>
-                    </p>
-                    <p>
+                    </div>
+                    <div class="form-group">
                         <select id="sv-app-street-select" style="width: 300px"></select>
-                    </p>
-                    <p>
+                    </div>
+                    <div class="form-group">
                         <select id="sv-app-house-select" style="width: 300px"></select>
-                    </p>
+                    </div>
+                    <div id="sv-error"></div>
                     <div id="sv-candidates"></div>
                     <div id="sv-vote-place"></div>
                 </div>
