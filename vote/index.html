@@ -1,0 +1,87 @@
+<!doctype html>
+
+<html lang="ru">
+
+<head>
+    <meta charset="utf-8">
+
+    <title>Умное голосование</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+    <link rel="stylesheet" href="/vote/select2.min.css">
+
+</head>
+
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <h1>Умное голосование</h1>
+                <p>Укажите Ваш адрес и мы предложим Вам наших кандидатов.</p>
+                <div class="sv-app">
+                    <p>
+                        <select id="sv-app-district-select" style="width: 300px">
+                            <!-- <option value="">---------</option> -->
+
+                            <!-- <option value="340f179a-bb2f-465d-b821-46a38d489e6a"></option> -->
+
+                            <option value="3d15ba7a-5d30-4081-9521-0062347c4bb0">АДМИРАЛТЕЙСКИЙ РАЙОН</option>
+
+                            <option value="723f1480-7324-4c07-a517-96efdbc6c034">ВАСИЛЕОСТРОВСКИЙ РАЙОН</option>
+
+                            <option value="c3a6fd79-0ba3-44dd-9b27-c2c83986e502">ВЫБОРГСКИЙ РАЙОН</option>
+
+                            <option value="5a5d0a08-56eb-481a-9704-9ab126d09114">КАЛИНИНСКИЙ РАЙОН</option>
+
+                            <option value="67adeff6-cf31-425c-bb7b-0e32e36ff258">КИРОВСКИЙ РАЙОН</option>
+
+                            <option value="9c15a158-fc5f-4fff-bfbb-fa093e8edadb">КОЛПИНСКИЙ РАЙОН</option>
+
+                            <option value="18ff97a9-d81b-4a0c-afaa-cf45655ebfda">КРАСНОГВАРДЕЙСКИЙ РАЙОН</option>
+
+                            <option value="c2c9c800-0308-4f2c-b0b1-7da3e415e6a3">КРАСНОСЕЛЬСКИЙ РАЙОН</option>
+
+                            <option value="b14a8871-0d98-44a5-ab89-dfcb9a7efb04">КРОНШТАДСКИЙ РАЙОН</option>
+
+                            <option value="7d8f83f0-d0bb-4f22-86f6-07de39de5118">КУРОРТНЫЙ РАЙОН</option>
+
+                            <option value="09aa8094-90e9-4dc4-a9e8-4ed46d386b36">МОСКОВСКИЙ РАЙОН</option>
+
+                            <option value="30ebf361-9398-4088-8d10-c30f308a6a85">НЕВСКИЙ РАЙОН</option>
+
+                            <option value="d7718bfc-1e83-4598-abbe-88ccd104fefa">ПЕТРОГРАДСКИЙ РАЙОН</option>
+
+                            <option value="ac844235-3cf7-43d2-84f0-ef0d34521236">ПЕТРОДВОРЦОВЫЙ РАЙОН</option>
+
+                            <option value="092533cb-54e2-4bf0-a262-ae5832d78dfa">ПРИМОРСКИЙ РАЙОН</option>
+
+                            <option value="34951920-d0c5-476b-ae9a-74db6afdc680">ПУШКИНСКИЙ РАЙОН</option>
+
+                            <option value="8ed603db-dfa3-4a56-972a-8c348071e724">ФРУНЗЕНСКИЙ РАЙОН</option>
+
+                            <option value="c3ce24de-d1f8-493e-82ed-27cf1e1ded84">ЦЕНТРАЛЬНЫЙ РАЙОН</option>
+
+                        </select>
+                    </p>
+                    <p>
+                        <select id="sv-app-street-select" style="width: 300px"></select>
+                    </p>
+                    <p>
+                        <select id="sv-app-house-select" style="width: 300px"></select>
+                    </p>
+                    <div id="sv-candidates"></div>
+                    <div id="sv-vote-place"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="/vote/jquery.min.js"></script>
+    <script src="/vote/select2.min.js"></script>
+    <script src="/vote/ru.js"></script>
+    <script src="/vote/papaparse.min.js"></script>
+    <script src="/vote/sv.js"></script>
+</body>
+
+</html>
