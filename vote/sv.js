@@ -154,11 +154,11 @@
         // console.log(uikData);
         // console.log(oikData);
         candidates.filter(function (candidate) {
-            console.log(candidate,  candidate.mo, oikData.mo, candidate.mo === oikData.mo);
+            // console.log(candidate,  candidate.mo, oikData.mo, candidate.mo === oikData.mo);
             return candidate.mo === oikData.mo;
         }).forEach(function (candidate) {
-            console.log(candidate);
-            console.log(oikData);
+            // console.log(candidate);
+            // console.log(oikData);
             var candidateTpl = [
                 '<tr>',
                 ['<td>', candidate.fio, '</td>'].join(''),
