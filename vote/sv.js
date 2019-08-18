@@ -113,17 +113,18 @@
     });
 
     $houseSelect.on('change.select2', function () {
-        var uik = $houseSelect.select2('data')[0].uik;
+        var uikData = $houseSelect.select2('data')[0];
+        var uik = uikData.uik;
         // var uik = oikByUik[$houseSelect.select2('data')[0].uik];
-        console.log('uik', uik);
-        var oikData = oikByUik[uik];
+        // console.log('uik', uik);
+        var oikData = oikByUik[uikData.uik];
         if (oikData === undefined) {
             drawError('Кандидаты для УИК ' + uik + ' не найдены');
             return;
         } else {
             clearError();
         }
-        drawCandidates(candidatesByOik[oikData.oik]);
+        drawCandidates(candidatesByOik[oikData.oik], uikData, oikData);
         drawVotePlace(votePlaces[uik]);
     });
 
@@ -140,7 +141,7 @@
 
     var $candidatesContainer = $('#sv-candidates');
 
-    function drawCandidates(candidates) {
+    function drawCandidates(candidates, uikData, oikData) {
         var tpl = [
             '<h3>Кандидаты</h3>',
             '<table class="table">',
@@ -149,8 +150,13 @@
             '<th>Партия</th>',
             '</tr>',
         ];
-
-        candidates.forEach(function (candidate) {
+        // console.log(uikData);
+        // console.log(oikData);
+        candidates.filter(function (candidate) {
+            // console.log(candidate,  candidate.mo, uikData.mo, candidate.mo === uikData.mo);
+            return candidate.mo === oikData.mo;
+        }).forEach(function (candidate) {
+            // console.log(candidate);
             var candidateTpl = [
                 '<tr>',
                 ['<td>', candidate.fio, '</td>'].join(''),
