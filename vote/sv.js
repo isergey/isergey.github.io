@@ -2,7 +2,6 @@
     'use strict';
     var candidatesByOik = {};
     var oikByUik = {};
-    var moByUik = {};
     var votePlaces = {};
     function sortCandidates(row1, row2) {
         if (row1[3] !== 'Объединенные Демократы' && row2[3] === 'Объединенные Демократы') {
@@ -102,6 +101,8 @@
                 return query;
             },
             processResults: function (data) {
+                console.log('data', data);
+                lastHousesSearch = data.results;
                 return {
                   results: data.results
                 };
@@ -116,7 +117,8 @@
 
     $houseSelect.on('change.select2', function () {
         var uikData = $houseSelect.select2('data')[0];
-        console.log('uikData', uikData);
+        // console.log('uikData', $houseSelect.select2('data'));
+        // console.log(lastHousesSearch);
         var uik = uikData.uik;
         // var uik = oikByUik[$houseSelect.select2('data')[0].uik];
         // console.log('uik', uik);
@@ -155,7 +157,7 @@
         ];
         candidates.filter(function (candidate) {
             // console.log(candidate,  candidate.mo, oikData.mo, candidate.mo === oikData.mo);
-            return candidate.mo.trim() === oikData.mo.trim();
+            return candidate.mo.trim().split(' ').join('').toLowerCase() === oikData.mo.trim().split(' ').join('').toLowerCase();
         }).forEach(function (candidate) {
             var candidateTpl = [
                 '<tr>',
