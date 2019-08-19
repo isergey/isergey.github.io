@@ -152,7 +152,7 @@
             '<table class="table">',
             '<tr>',
             '<th>Кандидат</th>',
-            '<th>Партия</th>',
+            '<th>Проект или партия</th>',
             '</tr>',
         ];
         candidates.filter(function (candidate) {
@@ -174,19 +174,19 @@
     var $votePlaceContainer = $('#sv-vote-place');
     function drawVotePlace(voitePlace) {
         var tpl = [
-            '<h3>Место голосования</h3>',
+            '<h3>Место для голосования</h3>',
             '<table class="table">',
             '<tr>',
-            '<th>Муниципалитет</th>',
+            '<th>Ваш муниципалитет</th>',
             '<td>' + voitePlace.mo + '</td>',
             '</tr><tr>',
-            '<th>УИК</th>',
+            '<th>Ваш УИК</th>',
             '<td>' + voitePlace.uik + '</td>',
             '</tr><tr>',
-            '<th>Адрес</th>',
+            '<th>Адрес помещения для голосования</th>',
             '<td>' + voitePlace.address + '</td>',
             '</tr><tr>',
-            '<th>Место голосования</th>',
+            '<th>Где находится</th>',
             '<td>' + voitePlace.place + '</td>',
             '</tr>',
             '</table>'
