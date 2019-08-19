@@ -15,7 +15,7 @@
         
         return 0;
     }
-    $.get('http://isergey.github.io/vote/candidate-oik.csv').then(function (data) {
+    $.get('/vote/candidate-oik.csv').then(function (data) {
         var res = Papa.parse(data);
         res.data.sort(sortCandidates).forEach(function (row) {
             var candidates = candidatesByOik[row[2]];
@@ -30,7 +30,7 @@
                 party: row[3],
             });
         });
-        return $.get('http://isergey.github.io/vote/oik-uik.csv');
+        return $.get('/vote/oik-uik.csv');
     }).then(function (data) {
         var res = Papa.parse(data);
         // console.log('data', res.data.map(i => i).forEeach);
@@ -44,7 +44,7 @@
                 }
             });
         });
-        return $.get('http://isergey.github.io/vote/vote-places.csv');
+        return $.get('/vote/vote-places.csv');
     }).then(function (data) {
         var res = Papa.parse(data);
         res.data.forEach(function (row) {
@@ -152,14 +152,10 @@
             '<th>Партия</th>',
             '</tr>',
         ];
-        // console.log(uikData);
-        // console.log(oikData);
         candidates.filter(function (candidate) {
             // console.log(candidate,  candidate.mo, oikData.mo, candidate.mo === oikData.mo);
-            return candidate.mo === oikData.mo;
+            return candidate.mo.trim() === oikData.mo.trim();
         }).forEach(function (candidate) {
-            // console.log(candidate);
-            // console.log(oikData);
             var candidateTpl = [
                 '<tr>',
                 ['<td>', candidate.fio, '</td>'].join(''),
