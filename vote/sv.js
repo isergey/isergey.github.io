@@ -15,7 +15,9 @@
         return 0;
     }
     $.get('/vote/candidate-oik.csv').then(function (data) {
-        var res = Papa.parse(data);
+        var res = Papa.parse(data, {
+            delimiter: ';',
+        });
         res.data.sort(sortCandidates).forEach(function (row) {
             var candidates = candidatesByOik[row[2]];
             if (candidates === undefined) {
@@ -31,7 +33,9 @@
         });
         return $.get('/vote/oik-uik.csv');
     }).then(function (data) {
-        var res = Papa.parse(data);
+        var res = Papa.parse(data, {
+            delimiter: ';',
+        });
         // console.log('data', res.data.map(i => i).forEeach);
         res.data.filter(function (item) {
             return item[0] !== '';
@@ -45,7 +49,9 @@
         });
         return $.get('/vote/vote-places.csv');
     }).then(function (data) {
-        var res = Papa.parse(data);
+        var res = Papa.parse(data, {
+            delimiter: ';',
+        });
         res.data.forEach(function (row) {
            votePlaces[row[1]] = {
                mo: row[0],
@@ -101,8 +107,6 @@
                 return query;
             },
             processResults: function (data) {
-                console.log('data', data);
-                lastHousesSearch = data.results;
                 return {
                   results: data.results
                 };
@@ -117,11 +121,7 @@
 
     $houseSelect.on('change.select2', function () {
         var uikData = $houseSelect.select2('data')[0];
-        // console.log('uikData', $houseSelect.select2('data'));
-        // console.log(lastHousesSearch);
         var uik = uikData.uik;
-        // var uik = oikByUik[$houseSelect.select2('data')[0].uik];
-        // console.log('uik', uik);
         var oikData = oikByUik[uikData.uik];
         if (oikData === undefined) {
             drawError('Кандидаты для УИК ' + uik + ' не найдены');
