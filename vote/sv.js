@@ -57,6 +57,7 @@
         });
     }).catch(function (error) {
         console.error(error);
+        drawError('При загрузке данных возникла ошибка');
     });
 
     var $districtSelect = $('#sv-app-district-select');
