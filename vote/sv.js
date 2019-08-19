@@ -116,6 +116,7 @@
 
     $houseSelect.on('change.select2', function () {
         var uikData = $houseSelect.select2('data')[0];
+        console.log('uikData', uikData);
         var uik = uikData.uik;
         // var uik = oikByUik[$houseSelect.select2('data')[0].uik];
         // console.log('uik', uik);
